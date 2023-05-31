@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 26.05.2023 12:36:28
+-- Create Date: 05/31/2023 03:36:45 PM
 -- Design Name: 
--- Module Name: MicroProcessor_sim - Behavioral
+-- Module Name: Adder_3_bit_Sim - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,42 +31,28 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-
-entity MicroProcessor_sim is
+entity Adder_3_bit_Sim is
 --  Port ( );
-end MicroProcessor_sim;
+end Adder_3_bit_Sim;
 
-architecture Behavioral of MicroProcessor_sim is
-    component MicroProcessor
+architecture Behavioral of Adder_3_bit_Sim is
+component Adder_3_bit is
     Port ( 
-        Clk,Res : in std_logic;
-        Overflow, Zero : out std_logic;
-        Reg_out : out std_logic_vector(3 downto 0)
-    );
-    end component;
-
- SIGNAL Res,Overflow,Zero : std_logic;
- SIGNAL Reg_out :STD_LOGIC_VECTOR(3 downto 0);
- signal Clk : std_logic :='0';
-
-    
+           A : in STD_LOGIC_VECTOR (2 downto 0);
+           S : out STD_LOGIC_VECTOR (2 downto 0));
+end component;
+SIGNAL A,S : STD_LOGIC_VECTOR (2 downto 0);
 begin
-    UUT: Microprocessor PORT MAP(
-        Res=>Res,
-        Clk=>Clk,
-        Overflow => Overflow,
-        Zero => Zero
-        
-  );
+UUT: Adder_3_bit PORT MAP(
+       A=> A,
+       S =>S       
+  ); 
 process begin
-    Clk <= not Clk after 10ns; 
-end process;
-process
-    begin
-    Res <= '1';
+    A <= "110";
     wait for 100ns;
-    Res <= '0';
-    wait;
-end process;
-
+    A <= "001";
+    wait for 100ns;
+    A <= "011";
+     wait for 100ns;
+ end process;
 end Behavioral;
