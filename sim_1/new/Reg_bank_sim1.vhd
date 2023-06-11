@@ -70,11 +70,21 @@ begin
     process
     begin
         En <= "001";
-        I <= "1010";
+        I <= "0111";
         wait for 100ns;
         
+        En <= "010";
+        I <= "1110";
+        
+        wait for 100ns;
+        En <= "011";
+        I <= "0101";
+        wait for 100ns;
         En <= "100";
-        I <= "0001";
+        I <= "0011";
+        wait for 100ns;
+        En <= "101";
+        I <= "1101";
         wait ;
     end process;
 

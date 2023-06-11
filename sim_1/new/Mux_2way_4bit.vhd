@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 05/31/2023 03:36:45 PM
+-- Create Date: 06/11/2023 01:37:11 PM
 -- Design Name: 
--- Module Name: Adder_3_bit_Sim - Behavioral
+-- Module Name: Mux_2way_4bit_Sim - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,35 +31,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Adder_3_bit_Sim is
+entity Mux_2way_4bit_Sim is
 --  Port ( );
-end Adder_3_bit_Sim;
+end Mux_2way_4bit_Sim;
 
-architecture Behavioral of Adder_3_bit_Sim is
-component Adder_3_bit is
-    Port ( 
-           A : in STD_LOGIC_VECTOR (2 downto 0);
-           S : out STD_LOGIC_VECTOR (2 downto 0));
-end component;
-SIGNAL A,S : STD_LOGIC_VECTOR (2 downto 0);
+architecture Behavioral of Mux_2way_4bit_Sim is
+
 begin
-UUT: Adder_3_bit PORT MAP(
-       A=> A,
-       S =>S       
-  ); 
-process begin
-    A <= "111";
-    wait for 100ns;
-    A <= "100";
-    wait for 100ns;
-    A <= "010";
-    wait for 100ns;
-    A <= "011";
-    wait for 100ns;
-    A <= "110";
-    wait for 100ns;
-    A <= "101";
-    wait ;
-    
- end process;
+
+
 end Behavioral;

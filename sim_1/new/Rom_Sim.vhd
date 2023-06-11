@@ -49,15 +49,17 @@ begin
    );
    process
     begin
-        address <= "000";
-        wait for  100ns;
         address <= "111";
         wait for  100ns;
-        address <= "101";
+        address <= "100";
+        wait for  100ns;
+        address <= "010";
+        wait for  100ns;
+        address <= "011";
         wait for  100ns;
         address <= "110";
-        wait for  100ns;
-        address <= "100";
+        wait for 100ns;
+        address <= "101";
         wait ;
     end process;
         
