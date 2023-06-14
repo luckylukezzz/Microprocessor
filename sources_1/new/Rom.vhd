@@ -39,7 +39,7 @@ end Rom;
 
 architecture Behavioral of Rom is
 begin
-    process (address)
+process (address)
     begin  
         case address is
             when "000" =>
@@ -51,11 +51,11 @@ begin
             when "011" =>
                 data <= "001110010000";--
             when "100" =>
-                data <= "001110100000";--
-            when "101" =>
                 data <= "000000000000";--
+            when "101" =>
+                data <= "001110100000";--
             when "110" =>
-                data <= "000000000000";
+                data <= "110000000000";
             when others =>
                 data <= "000000000000";
         end case;
